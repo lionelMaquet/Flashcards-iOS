@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="flashcard" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flashcard" inverseName="parentCategory" inverseEntity="Flashcard"/>
+    </entity>
+    <entity name="Flashcard" representedClassName="Flashcard" syncable="YES" codeGenerationType="class">
+        <attribute name="question" optional="YES" attributeType="String"/>
+        <attribute name="response" optional="YES" attributeType="String"/>
+        <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="flashcard" inverseEntity="Category"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="Flashcard" positionX="108.8828125" positionY="-9.5" width="128" height="88"/>
+    </elements>
 </model>

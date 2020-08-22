@@ -18,6 +18,8 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         loadCategories()
     }
+    
+    //MARK: - Add Category
 
     @IBAction func addCategoryButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -42,6 +44,8 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         }
         present(alert, animated : true)
     }
+    
+    //MARK: - Search bar methods
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -72,6 +76,13 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         let category = categories[indexPath.row]
         cell?.textLabel!.text = category.name!
         return cell!
+    }
+    
+    
+    //MARK: - Did select row
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToFlashcards", sender: self)
     }
     
     //MARK: - Data Functions

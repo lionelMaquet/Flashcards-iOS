@@ -14,6 +14,7 @@
 		E2DBCAA424F1470D0036C38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCAA324F1470D0036C38D /* Assets.xcassets */; };
 		E2DBCAA724F1470D0036C38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCAA524F1470D0036C38D /* LaunchScreen.storyboard */; };
 		E2DBCAAF24F147EE0036C38D /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCAAE24F147EE0036C38D /* CategoryTableViewController.swift */; };
+		E2DBCAB224F14F670036C38D /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCAB124F14F670036C38D /* FlashcardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E2DBCAA624F1470D0036C38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2DBCAA824F1470D0036C38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2DBCAAE24F147EE0036C38D /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		E2DBCAB124F14F670036C38D /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlashcardsViewController.swift; path = Flashcards/FlashcardsViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		E2DBCAB024F147F10036C38D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2DBCAB124F14F670036C38D /* FlashcardsViewController.swift */,
 				E2DBCAAE24F147EE0036C38D /* CategoryTableViewController.swift */,
 			);
 			path = Controllers;
@@ -152,6 +155,7 @@
 				E2DBCA9824F1470B0036C38D /* AppDelegate.swift in Sources */,
 				E2DBCAAF24F147EE0036C38D /* CategoryTableViewController.swift in Sources */,
 				E2DBCAA224F1470B0036C38D /* Flashcards.xcdatamodeld in Sources */,
+				E2DBCAB224F14F670036C38D /* FlashcardsViewController.swift in Sources */,
 				E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

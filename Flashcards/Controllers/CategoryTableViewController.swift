@@ -20,6 +20,25 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     @IBAction func addCategoryButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textfield = UITextField()
+        
+        let alert = UIAlertController(title: "Add new category", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add category", style: .default) { (UIAlertAction) in
+            let newCategory = Category(context: self.context)
+            newCategory.name = textfield.text
+            self.categories.append(newCategory)
+            self.saveCategories()
+        }
+        
+        alert.addAction(action)
+        
+        alert.addTextField { (tf) in
+            tf.placeholder = "category name"
+            textfield = tf
+        }
+        present(alert, animated : true)
     }
     
     @IBOutlet weak var searchBar: UISearchBar!

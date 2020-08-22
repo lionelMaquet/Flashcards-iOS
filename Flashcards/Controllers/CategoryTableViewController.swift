@@ -26,10 +26,12 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         let alert = UIAlertController(title: "Add new category", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add category", style: .default) { (UIAlertAction) in
-            let newCategory = Category(context: self.context)
-            newCategory.name = textfield.text
-            self.categories.append(newCategory)
-            self.saveCategories()
+            if !textfield.text!.isEmpty {
+                let newCategory = Category(context: self.context)
+                newCategory.name = textfield.text
+                self.categories.append(newCategory)
+                self.saveCategories()
+            }
         }
         
         alert.addAction(action)
@@ -42,6 +44,22 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchText = searchBar.text
+        let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText as! CVarArg)
+        loadCategories(predicate: predicate)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            loadCategories()
+            DispatchQueue.main.async {
+               searchBar.resignFirstResponder()
+            }
+            
+        }
+    }
     
     // MARK: - Table view data source
 
@@ -58,8 +76,12 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
     //MARK: - Data Functions
     
-    func loadCategories(){
-        let request : NSFetchRequest<Category> = Category.fetchRequest()
+    func loadCategories(with request : NSFetchRequest<Category> = Category.fetchRequest(), predicate: NSPredicate? = nil){
+        
+        if let predicate = predicate {
+            request.predicate = predicate
+        }
+        
         do {
             categories = try context.fetch(request)
         } catch {
@@ -69,7 +91,12 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func saveCategories(){
-        
+        do {
+            try context.save()
+        } catch {
+         print(error)
+        }
+        tableView.reloadData()
     }
 
     

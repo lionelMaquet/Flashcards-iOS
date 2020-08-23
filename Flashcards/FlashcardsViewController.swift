@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class FlashcardsViewController: UIViewController {
     
     @IBOutlet weak var btn: UIButton!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var selectedCategory: Category? {
         didSet {
@@ -35,6 +38,17 @@ class FlashcardsViewController: UIViewController {
     }
     
     func loadFlashcards(){
+        let request: NSFetchRequest<Flashcard> = Flashcard.fetchRequest()
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", self.selectedCategory?.name! as! CVarArg)
+        request.predicate = categoryPredicate
+        
+        do {
+            self.flashcards = try context.fetch(request)
+            print(flashcards)
+        } catch {
+            print(error)
+        }
+        
         
     }
     

@@ -31,6 +31,34 @@ class FlashcardsViewController: UIViewController {
     }
     
     @IBAction func addFlashcardButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var questTF = UITextField()
+        var ansTF = UITextField()
+        
+        let alert = UIAlertController(title: "Add Flashcard", message: "", preferredStyle: .alert)
+        alert.addTextField { (questionTF) in
+            questionTF.placeholder = "Question"
+            questTF = questionTF
+            
+        }
+        
+        alert.addTextField { (answerTF) in
+            answerTF.placeholder = "Answer"
+            ansTF = answerTF
+        }
+        
+        let action = UIAlertAction(title: "Add to this category", style: .default) { (completion) in
+            let newFlashcard = Flashcard(context: self.context)
+            newFlashcard.parentCategory = self.selectedCategory
+            newFlashcard.question = questTF.text
+            newFlashcard.response = ansTF.text
+            self.flashcards.append(newFlashcard)
+            self.saveFlashcards()
+        }
+        alert.addAction(action)
+        
+        present(alert, animated: true)
+        
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -44,12 +72,19 @@ class FlashcardsViewController: UIViewController {
         
         do {
             self.flashcards = try context.fetch(request)
-            print(flashcards)
         } catch {
             print(error)
         }
         
         
+    }
+    
+    func saveFlashcards(){
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
 }

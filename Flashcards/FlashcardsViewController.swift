@@ -14,12 +14,15 @@ class FlashcardsViewController: UIViewController {
     
     var selectedCategory: Category? {
         didSet {
-            
+            loadFlashcards()
         }
     }
+    
+    var flashcards = [Flashcard]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFlashcards()
 
         // Do any additional setup after loading the view.
     }
@@ -29,6 +32,10 @@ class FlashcardsViewController: UIViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         UIView.transition(with: btn, duration: 0.2, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+    }
+    
+    func loadFlashcards(){
+        
     }
     
 }

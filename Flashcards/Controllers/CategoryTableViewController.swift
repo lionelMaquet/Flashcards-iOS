@@ -85,6 +85,11 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         performSegue(withIdentifier: "goToFlashcards", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! FlashcardsViewController
+        destinationVC.selectedCategory = categories[tableView.indexPathForSelectedRow!.row]
+    }
+    
     //MARK: - Data Functions
     
     func loadCategories(with request : NSFetchRequest<Category> = Category.fetchRequest(), predicate: NSPredicate? = nil){

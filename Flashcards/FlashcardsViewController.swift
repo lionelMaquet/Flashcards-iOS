@@ -11,7 +11,12 @@ import CoreData
 
 class FlashcardsViewController: UIViewController {
     
-    @IBOutlet weak var btn: UIButton!
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var qoraLabel: UILabel!
+    @IBOutlet weak var flashcardLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -26,8 +31,6 @@ class FlashcardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFlashcards()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func addFlashcardButtonPressed(_ sender: UIBarButtonItem) {
@@ -61,9 +64,8 @@ class FlashcardsViewController: UIViewController {
         
     }
     
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        UIView.transition(with: btn, duration: 0.2, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-    }
+    
+    //MARK: - Data Methods
     
     func loadFlashcards(){
         let request: NSFetchRequest<Flashcard> = Flashcard.fetchRequest()
@@ -76,7 +78,6 @@ class FlashcardsViewController: UIViewController {
             print(error)
         }
         
-        
     }
     
     func saveFlashcards(){
@@ -87,4 +88,12 @@ class FlashcardsViewController: UIViewController {
         }
     }
     
+    
+    //MARK: - Flashcard functions
+    
+    @IBAction func previousButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    }
 }

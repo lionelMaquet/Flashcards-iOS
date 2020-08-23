@@ -17,6 +17,7 @@ class FlashcardsViewController: UIViewController {
     @IBOutlet weak var flashcardLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     
+    //MARK: - Variables
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -27,10 +28,62 @@ class FlashcardsViewController: UIViewController {
     }
     
     var flashcards = [Flashcard]()
+    var currentPosition: Int = 0
+    var shouldDisplayQuestion: Bool = true
+    
+    var currentQuestion: String {
+        if (flashcards.count > 0){
+            return flashcards[currentPosition].question!
+        } else {
+            return "There is currently no flashcard in this deck !"
+        }
+        
+    }
+    
+    var currentAnswer: String {
+        if (flashcards.count > 0){
+            return flashcards[currentPosition].response!
+        } else {
+            return "There is currently no flashcard in this deck !"
+        }
+        
+    }
+    
+    var textForPositionLabel: String {
+        if (flashcards.count == 0){
+            return "0/0"
+        }
+        
+        return "\(currentPosition + 1) / \(flashcards.count)"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFlashcards()
+        updateFlashcardUI()
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+    }
+    
+    @objc func handleGesture(){
+        shouldDisplayQuestion = !shouldDisplayQuestion
+        
+        UIView.transition(with: flashcardLabel, duration: 0.25, options: .transitionFlipFromLeft, animations: {
+            
+        }) { (bool) in
+            if (self.shouldDisplayQuestion){
+                self.flashcardLabel.text = self.currentQuestion
+            } else {
+                self.flashcardLabel.text = self.currentAnswer
+            }
+            self.updateFlashcardUI()
+        }
     }
     
     @IBAction func addFlashcardButtonPressed(_ sender: UIBarButtonItem) {
@@ -57,6 +110,7 @@ class FlashcardsViewController: UIViewController {
             newFlashcard.response = ansTF.text
             self.flashcards.append(newFlashcard)
             self.saveFlashcards()
+            self.updateFlashcardUI()
         }
         alert.addAction(action)
         
@@ -92,8 +146,29 @@ class FlashcardsViewController: UIViewController {
     //MARK: - Flashcard functions
     
     @IBAction func previousButtonPressed(_ sender: UIButton) {
+        if(currentPosition > 0){
+            shouldDisplayQuestion = true
+            currentPosition -= 1
+            updateFlashcardUI()
+        }
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        if(currentPosition < flashcards.count - 1){
+            shouldDisplayQuestion = true
+            currentPosition += 1
+            updateFlashcardUI()
+        }
+    }
+    
+    func updateFlashcardUI(){
+        if (shouldDisplayQuestion){
+            qoraLabel.text = "Question"
+            flashcardLabel.text = self.currentQuestion
+        } else {
+            qoraLabel.text = "Answer"
+            flashcardLabel.text = self.currentAnswer
+        }
+        positionLabel.text = self.textForPositionLabel
     }
 }

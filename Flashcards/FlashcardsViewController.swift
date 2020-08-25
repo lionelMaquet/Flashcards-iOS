@@ -62,27 +62,42 @@ class FlashcardsViewController: UIViewController {
         loadFlashcards()
         updateFlashcardUI()
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeLeftGesture))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
 
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeRightGesture))
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
+        
+        let touch = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
+        self.view.addGestureRecognizer(touch)
     }
     
-    @objc func handleGesture(){
+    @objc func handleTapGesture(){
         shouldDisplayQuestion = !shouldDisplayQuestion
         
-        UIView.transition(with: flashcardLabel, duration: 0.25, options: .transitionFlipFromLeft, animations: {
-            
-        }) { (bool) in
-            if (self.shouldDisplayQuestion){
-                self.flashcardLabel.text = self.currentQuestion
-            } else {
-                self.flashcardLabel.text = self.currentAnswer
-            }
-            self.updateFlashcardUI()
+        if (self.shouldDisplayQuestion){
+            self.flashcardLabel.text = self.currentQuestion
+        } else {
+            self.flashcardLabel.text = self.currentAnswer
+        }
+        self.updateFlashcardUI()
+    }
+    
+    @objc func handleSwipeLeftGesture(){
+        if(currentPosition < flashcards.count - 1){
+            shouldDisplayQuestion = true
+            currentPosition += 1
+            updateFlashcardUI()
+        }
+    }
+    
+    @objc func handleSwipeRightGesture(){
+        if(currentPosition > 0){
+            shouldDisplayQuestion = true
+            currentPosition -= 1
+            updateFlashcardUI()
         }
     }
     
@@ -145,21 +160,6 @@ class FlashcardsViewController: UIViewController {
     
     //MARK: - Flashcard functions
     
-    @IBAction func previousButtonPressed(_ sender: UIButton) {
-        if(currentPosition > 0){
-            shouldDisplayQuestion = true
-            currentPosition -= 1
-            updateFlashcardUI()
-        }
-    }
-    
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
-        if(currentPosition < flashcards.count - 1){
-            shouldDisplayQuestion = true
-            currentPosition += 1
-            updateFlashcardUI()
-        }
-    }
     
     func updateFlashcardUI(){
         if (shouldDisplayQuestion){

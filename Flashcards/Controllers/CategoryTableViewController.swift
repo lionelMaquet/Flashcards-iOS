@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var categories = [Category]()
+    let realm = try! Realm()
+    var categories : Results<Category>?
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         searchBar.delegate = self
         loadCategories()
@@ -29,10 +30,17 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         
         let action = UIAlertAction(title: "Add category", style: .default) { (UIAlertAction) in
             if !textfield.text!.isEmpty {
-                let newCategory = Category(context: self.context)
-                newCategory.name = textfield.text
-                self.categories.append(newCategory)
-                self.saveCategories()
+                let newCategory = Category()
+                newCategory.name = textfield.text!
+                
+                do {
+                    try self.realm.write {
+                        self.realm.add(newCategory)
+                    }
+                } catch {
+                    print(error)
+                }
+                self.tableView.reloadData()
             }
         }
         
@@ -52,7 +60,8 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchText = searchBar.text
         let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchText as! CVarArg)
-        loadCategories(predicate: predicate)
+        self.categories = self.categories!.filter(predicate)
+        self.tableView.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -61,6 +70,7 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
             DispatchQueue.main.async {
                searchBar.resignFirstResponder()
             }
+            self.tableView.reloadData()
             
         }
     }
@@ -68,13 +78,13 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories!.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell")
-        let category = categories[indexPath.row]
-        cell?.textLabel!.text = category.name!
+        let category = categories![indexPath.row]
+        cell?.textLabel!.text = category.name
         return cell!
     }
     
@@ -87,32 +97,17 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! FlashcardsViewController
-        destinationVC.selectedCategory = categories[tableView.indexPathForSelectedRow!.row]
+        destinationVC.selectedCategory = categories![tableView.indexPathForSelectedRow!.row]
     }
     
     //MARK: - Data Functions
     
-    func loadCategories(with request : NSFetchRequest<Category> = Category.fetchRequest(), predicate: NSPredicate? = nil){
-        
-        if let predicate = predicate {
-            request.predicate = predicate
-        }
-        
-        do {
-            categories = try context.fetch(request)
-        } catch {
-            print(error)
-        }
+    func loadCategories(){
+        categories = realm.objects(Category.self)
         tableView.reloadData()
     }
     
     func saveCategories(){
-        do {
-            try context.save()
-        } catch {
-         print(error)
-        }
-        tableView.reloadData()
     }
 
     

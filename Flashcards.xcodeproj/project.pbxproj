@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A385096592A9B49F2629462E /* Pods_Flashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8514568F40618700AF26828 /* Pods_Flashcards.framework */; };
+		E2B6B9AC24F692F800DE0A1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9AB24F692F800DE0A1E /* Category.swift */; };
+		E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B124F693B900DE0A1E /* Flashcard.swift */; };
 		E2DBCA9824F1470B0036C38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9724F1470B0036C38D /* AppDelegate.swift */; };
 		E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */; };
 		E2DBCA9F24F1470B0036C38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCA9D24F1470B0036C38D /* Main.storyboard */; };
-		E2DBCAA224F1470B0036C38D /* Flashcards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCAA024F1470B0036C38D /* Flashcards.xcdatamodeld */; };
 		E2DBCAA424F1470D0036C38D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCAA324F1470D0036C38D /* Assets.xcassets */; };
 		E2DBCAA724F1470D0036C38D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCAA524F1470D0036C38D /* LaunchScreen.storyboard */; };
 		E2DBCAAF24F147EE0036C38D /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCAAE24F147EE0036C38D /* CategoryTableViewController.swift */; };
@@ -18,11 +20,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		203645B93C47B83A5D4F4FC0 /* Pods-Flashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcards.release.xcconfig"; path = "Target Support Files/Pods-Flashcards/Pods-Flashcards.release.xcconfig"; sourceTree = "<group>"; };
+		B8514568F40618700AF26828 /* Pods_Flashcards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flashcards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F2D6426B6161B13E0CE1C1 /* Pods-Flashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcards.debug.xcconfig"; path = "Target Support Files/Pods-Flashcards/Pods-Flashcards.debug.xcconfig"; sourceTree = "<group>"; };
+		E2B6B9AB24F692F800DE0A1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E2B6B9B124F693B900DE0A1E /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		E2DBCA9424F1470B0036C38D /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DBCA9724F1470B0036C38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E2DBCA9E24F1470B0036C38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E2DBCAA124F1470B0036C38D /* Flashcards.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Flashcards.xcdatamodel; sourceTree = "<group>"; };
 		E2DBCAA324F1470D0036C38D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2DBCAA624F1470D0036C38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2DBCAA824F1470D0036C38D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,17 +41,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A385096592A9B49F2629462E /* Pods_Flashcards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A66835F25DA797B60B53F83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8514568F40618700AF26828 /* Pods_Flashcards.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA8345D319CA7BC0CD60FF16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4F2D6426B6161B13E0CE1C1 /* Pods-Flashcards.debug.xcconfig */,
+				203645B93C47B83A5D4F4FC0 /* Pods-Flashcards.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2B6B9B324F6942100DE0A1E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E2B6B9AB24F692F800DE0A1E /* Category.swift */,
+				E2B6B9B124F693B900DE0A1E /* Flashcard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E2B6B9B424F6942900DE0A1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2DBCAA524F1470D0036C38D /* LaunchScreen.storyboard */,
+				E2DBCA9D24F1470B0036C38D /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E2DBCA8B24F1470B0036C38D = {
 			isa = PBXGroup;
 			children = (
 				E2DBCA9624F1470B0036C38D /* Flashcards */,
 				E2DBCA9524F1470B0036C38D /* Products */,
+				CA8345D319CA7BC0CD60FF16 /* Pods */,
+				3A66835F25DA797B60B53F83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,12 +106,11 @@
 			children = (
 				E2DBCA9724F1470B0036C38D /* AppDelegate.swift */,
 				E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */,
-				E2DBCA9D24F1470B0036C38D /* Main.storyboard */,
+				E2B6B9B424F6942900DE0A1E /* Views */,
+				E2B6B9B324F6942100DE0A1E /* Models */,
 				E2DBCAB024F147F10036C38D /* Controllers */,
 				E2DBCAA324F1470D0036C38D /* Assets.xcassets */,
-				E2DBCAA524F1470D0036C38D /* LaunchScreen.storyboard */,
 				E2DBCAA824F1470D0036C38D /* Info.plist */,
-				E2DBCAA024F1470B0036C38D /* Flashcards.xcdatamodeld */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -88,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E2DBCAAB24F1470D0036C38D /* Build configuration list for PBXNativeTarget "Flashcards" */;
 			buildPhases = (
+				832220756A9F1F4B7CAEEDB9 /* [CP] Check Pods Manifest.lock */,
 				E2DBCA9024F1470B0036C38D /* Sources */,
 				E2DBCA9124F1470B0036C38D /* Frameworks */,
 				E2DBCA9224F1470B0036C38D /* Resources */,
+				EB66E9CF7D33939E4B3E568F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +192,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		832220756A9F1F4B7CAEEDB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flashcards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB66E9CF7D33939E4B3E568F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashcards/Pods-Flashcards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashcards/Pods-Flashcards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flashcards/Pods-Flashcards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E2DBCA9024F1470B0036C38D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -154,9 +241,10 @@
 			files = (
 				E2DBCA9824F1470B0036C38D /* AppDelegate.swift in Sources */,
 				E2DBCAAF24F147EE0036C38D /* CategoryTableViewController.swift in Sources */,
-				E2DBCAA224F1470B0036C38D /* Flashcards.xcdatamodeld in Sources */,
 				E2DBCAB224F14F670036C38D /* FlashcardsViewController.swift in Sources */,
 				E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */,
+				E2B6B9AC24F692F800DE0A1E /* Category.swift in Sources */,
+				E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +386,7 @@
 		};
 		E2DBCAAC24F1470D0036C38D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4F2D6426B6161B13E0CE1C1 /* Pods-Flashcards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +405,7 @@
 		};
 		E2DBCAAD24F1470D0036C38D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 203645B93C47B83A5D4F4FC0 /* Pods-Flashcards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -354,19 +444,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E2DBCAA024F1470B0036C38D /* Flashcards.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E2DBCAA124F1470B0036C38D /* Flashcards.xcdatamodel */,
-			);
-			currentVersion = E2DBCAA124F1470B0036C38D /* Flashcards.xcdatamodel */;
-			path = Flashcards.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E2DBCA8C24F1470B0036C38D /* Project object */;
 }

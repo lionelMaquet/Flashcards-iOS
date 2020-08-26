@@ -7,9 +7,11 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class FlashcardsViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     //MARK: - IBOutlets
     
@@ -19,21 +21,19 @@ class FlashcardsViewController: UIViewController {
     
     //MARK: - Variables
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     var selectedCategory: Category? {
         didSet {
             loadFlashcards()
         }
     }
     
-    var flashcards = [Flashcard]()
+    var flashcards : Results<Flashcard>?
     var currentPosition: Int = 0
     var shouldDisplayQuestion: Bool = true
     
     var currentQuestion: String {
-        if (flashcards.count > 0){
-            return flashcards[currentPosition].question!
+        if (flashcards!.count > 0){
+            return flashcards![currentPosition].question
         } else {
             return "There is currently no flashcard in this deck !"
         }
@@ -41,8 +41,8 @@ class FlashcardsViewController: UIViewController {
     }
     
     var currentAnswer: String {
-        if (flashcards.count > 0){
-            return flashcards[currentPosition].response!
+        if (flashcards!.count > 0){
+            return flashcards![currentPosition].response
         } else {
             return "There is currently no flashcard in this deck !"
         }
@@ -50,11 +50,11 @@ class FlashcardsViewController: UIViewController {
     }
     
     var textForPositionLabel: String {
-        if (flashcards.count == 0){
+        if (flashcards!.count == 0){
             return "0/0"
         }
         
-        return "\(currentPosition + 1) / \(flashcards.count)"
+        return "\(currentPosition + 1) / \(flashcards!.count)"
     }
 
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ class FlashcardsViewController: UIViewController {
     }
     
     @objc func handleSwipeLeftGesture(){
-        if(currentPosition < flashcards.count - 1){
+        if(currentPosition < flashcards!.count - 1){
             shouldDisplayQuestion = true
             currentPosition += 1
             updateFlashcardUI()
@@ -119,12 +119,20 @@ class FlashcardsViewController: UIViewController {
         }
         
         let action = UIAlertAction(title: "Add to this category", style: .default) { (completion) in
-            let newFlashcard = Flashcard(context: self.context)
-            newFlashcard.parentCategory = self.selectedCategory
-            newFlashcard.question = questTF.text
-            newFlashcard.response = ansTF.text
-            self.flashcards.append(newFlashcard)
-            self.saveFlashcards()
+            let newFlashcard = Flashcard()
+            newFlashcard.question = questTF.text!
+            newFlashcard.response = ansTF.text!
+            newFlashcard.dateCreated = Date()
+            
+            do {
+                try self.realm.write {
+                    self.selectedCategory?.flashcards.append(newFlashcard)
+                }
+            } catch {
+                print(error)
+            }
+            
+            
             self.updateFlashcardUI()
         }
         alert.addAction(action)
@@ -137,24 +145,7 @@ class FlashcardsViewController: UIViewController {
     //MARK: - Data Methods
     
     func loadFlashcards(){
-        let request: NSFetchRequest<Flashcard> = Flashcard.fetchRequest()
-        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", self.selectedCategory?.name! as! CVarArg)
-        request.predicate = categoryPredicate
-        
-        do {
-            self.flashcards = try context.fetch(request)
-        } catch {
-            print(error)
-        }
-        
-    }
-    
-    func saveFlashcards(){
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
+        self.flashcards = selectedCategory!.flashcards.sorted(byKeyPath: "dateCreated", ascending: true)
     }
     
     

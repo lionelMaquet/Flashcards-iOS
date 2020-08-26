@@ -50,7 +50,12 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (completion) in
+            //nothing happens
+        }
+        
         alert.addAction(action)
+        alert.addAction(cancelAction)
         
         alert.addTextField { (tf) in
             tf.placeholder = "category name"

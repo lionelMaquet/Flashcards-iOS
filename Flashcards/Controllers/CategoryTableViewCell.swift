@@ -42,7 +42,7 @@ class CategoryTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        //titleLabel.textColor = 
+        //titleLabel.textColor =
         
         borderView.layer.borderWidth = 2
         borderView.layer.borderColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1).cgColor
@@ -62,7 +62,7 @@ class CategoryTableViewCell: UITableViewCell {
             self.deleteCurrentCategory()
         }
         
-        let cancelAction = UIAlertAction(title: "cancel", style: .default) { (completion) in
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { (completion) in
             // do nothing
         }
         

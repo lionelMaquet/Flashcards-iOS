@@ -11,6 +11,33 @@ import RealmSwift
 
 class FlashcardsViewController: UIViewController {
     
+    @IBAction func trashButtonPressed(_ sender: UIBarButtonItem) {
+        if (flashcards!.count > 0){
+            let alert = UIAlertController(title: "Delete", message: "Do you really want to delete this flashcard ?", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "Delete", style: .default, handler: { (completion) in
+                self.deleteCurrentFlashcard()
+            })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (completion) in
+                // nothing happens
+            }
+            
+            
+            alert.addAction(cancelAction)
+            alert.addAction(OKAction)
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Delete", message: "There is currently no flashcard to delete. Press the + button to add your first card.", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (completion) in
+                // nothing happens
+            })
+            alert.addAction(OKAction)
+            present(alert, animated: true)
+        }
+        
+        
+        
+    }
+    
     @IBOutlet weak var textSign: UILabel!
     let realm = try! Realm()
     
@@ -31,6 +58,9 @@ class FlashcardsViewController: UIViewController {
     var flashcards : Results<Flashcard>?
     var currentPosition: Int = 0
     var shouldDisplayQuestion: Bool = true
+    var currentFlashcard: Flashcard {
+        return flashcards![currentPosition]
+    }
     
     var currentQuestion: String {
         if (flashcards!.count > 0){
@@ -73,6 +103,9 @@ class FlashcardsViewController: UIViewController {
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture))
         self.view.addGestureRecognizer(touch)
+        
+        title = selectedCategory?.name
+        
     }
     
     @objc func handleTapGesture(){
@@ -136,7 +169,13 @@ class FlashcardsViewController: UIViewController {
             
             self.updateFlashcardUI()
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (completion) in
+            //nothing happens
+        }
+        
         alert.addAction(action)
+        alert.addAction(cancelAction)
         
         present(alert, animated: true)
         
@@ -164,5 +203,16 @@ class FlashcardsViewController: UIViewController {
             textSign.textColor = UIColor.green
         }
         positionLabel.text = self.textForPositionLabel
+    }
+    
+    func deleteCurrentFlashcard(){
+        do {
+            try realm.write {
+                realm.delete(currentFlashcard)
+            }
+        } catch {
+            print(error)
+        }
+        updateFlashcardUI()
     }
 }

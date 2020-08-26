@@ -112,11 +112,18 @@
                         <viewLayoutGuide key="safeArea" id="O8b-88-Hfp"/>
                     </view>
                     <navigationItem key="navigationItem" id="Izv-8b-Xp7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ie0-3Z-M0y">
-                            <connections>
-                                <action selector="addFlashcardButtonPressed:" destination="Ukb-zU-DXd" id="s6T-Ne-JcJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="ie0-3Z-M0y">
+                                <connections>
+                                    <action selector="addFlashcardButtonPressed:" destination="Ukb-zU-DXd" id="s6T-Ne-JcJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="trash" id="tYr-pE-CHJ">
+                                <connections>
+                                    <action selector="trashButtonPressed:" destination="Ukb-zU-DXd" id="6sc-oY-uuz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="flashcardLabel" destination="V6U-7M-4Hc" id="1Uj-Ls-Iop"/>

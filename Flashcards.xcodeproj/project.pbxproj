@@ -12,6 +12,11 @@
 		E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B124F693B900DE0A1E /* Flashcard.swift */; };
 		E2B6B9B724F69F0C00DE0A1E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */; };
 		E2B6B9B824F69F0C00DE0A1E /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9B624F69F0C00DE0A1E /* CategoryTableViewCell.xib */; };
+		E2B6B9BF24F6C94700DE0A1E /* BalooTamma2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9BE24F6C80500DE0A1E /* BalooTamma2-Bold.ttf */; };
+		E2B6B9C024F6C94900DE0A1E /* BalooTamma2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9BA24F6C80400DE0A1E /* BalooTamma2-ExtraBold.ttf */; };
+		E2B6B9C124F6C94A00DE0A1E /* BalooTamma2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9BC24F6C80500DE0A1E /* BalooTamma2-Medium.ttf */; };
+		E2B6B9C224F6C94B00DE0A1E /* BalooTamma2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9BB24F6C80500DE0A1E /* BalooTamma2-Regular.ttf */; };
+		E2B6B9C324F6C94D00DE0A1E /* BalooTamma2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9BD24F6C80500DE0A1E /* BalooTamma2-SemiBold.ttf */; };
 		E2DBCA9824F1470B0036C38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9724F1470B0036C38D /* AppDelegate.swift */; };
 		E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */; };
 		E2DBCA9F24F1470B0036C38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCA9D24F1470B0036C38D /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 		E2B6B9B124F693B900DE0A1E /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		E2B6B9B624F69F0C00DE0A1E /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		E2B6B9BA24F6C80400DE0A1E /* BalooTamma2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooTamma2-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E2B6B9BB24F6C80500DE0A1E /* BalooTamma2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooTamma2-Regular.ttf"; sourceTree = "<group>"; };
+		E2B6B9BC24F6C80500DE0A1E /* BalooTamma2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooTamma2-Medium.ttf"; sourceTree = "<group>"; };
+		E2B6B9BD24F6C80500DE0A1E /* BalooTamma2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooTamma2-SemiBold.ttf"; sourceTree = "<group>"; };
+		E2B6B9BE24F6C80500DE0A1E /* BalooTamma2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooTamma2-Bold.ttf"; sourceTree = "<group>"; };
 		E2DBCA9424F1470B0036C38D /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DBCA9724F1470B0036C38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +98,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E2B6B9B924F6C7D600DE0A1E /* assets and fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2B6B9BE24F6C80500DE0A1E /* BalooTamma2-Bold.ttf */,
+				E2B6B9BA24F6C80400DE0A1E /* BalooTamma2-ExtraBold.ttf */,
+				E2B6B9BC24F6C80500DE0A1E /* BalooTamma2-Medium.ttf */,
+				E2B6B9BB24F6C80500DE0A1E /* BalooTamma2-Regular.ttf */,
+				E2B6B9BD24F6C80500DE0A1E /* BalooTamma2-SemiBold.ttf */,
+				E2DBCAA324F1470D0036C38D /* Assets.xcassets */,
+			);
+			path = "assets and fonts";
+			sourceTree = "<group>";
+		};
 		E2DBCA8B24F1470B0036C38D = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +137,7 @@
 				E2B6B9B424F6942900DE0A1E /* Views */,
 				E2B6B9B324F6942100DE0A1E /* Models */,
 				E2DBCAB024F147F10036C38D /* Controllers */,
-				E2DBCAA324F1470D0036C38D /* Assets.xcassets */,
+				E2B6B9B924F6C7D600DE0A1E /* assets and fonts */,
 				E2DBCAA824F1470D0036C38D /* Info.plist */,
 			);
 			path = Flashcards;
@@ -192,7 +215,12 @@
 			files = (
 				E2DBCAA724F1470D0036C38D /* LaunchScreen.storyboard in Resources */,
 				E2DBCAA424F1470D0036C38D /* Assets.xcassets in Resources */,
+				E2B6B9BF24F6C94700DE0A1E /* BalooTamma2-Bold.ttf in Resources */,
+				E2B6B9C024F6C94900DE0A1E /* BalooTamma2-ExtraBold.ttf in Resources */,
+				E2B6B9C124F6C94A00DE0A1E /* BalooTamma2-Medium.ttf in Resources */,
 				E2DBCA9F24F1470B0036C38D /* Main.storyboard in Resources */,
+				E2B6B9C324F6C94D00DE0A1E /* BalooTamma2-SemiBold.ttf in Resources */,
+				E2B6B9C224F6C94B00DE0A1E /* BalooTamma2-Regular.ttf in Resources */,
 				E2B6B9B824F69F0C00DE0A1E /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,16 +20,16 @@
                         <rect key="frame" x="36" y="31" width="248" height="110"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7pM-EG-FxM">
-                                <rect key="frame" x="0.0" y="0.0" width="248" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="35"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEB-xq-Yl8">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEB-xq-Yl8">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-88-G0a">
-                                        <rect key="frame" x="202" y="0.0" width="46" height="30"/>
+                                        <rect key="frame" x="202" y="0.0" width="46" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="deleteCategoryButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JMQ-px-BCr"/>
@@ -38,20 +38,20 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="52v-xO-H7X">
-                                <rect key="frame" x="0.0" y="69" width="248" height="41"/>
+                                <rect key="frame" x="0.0" y="77.5" width="248" height="32.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSF-sp-Pcw">
-                                        <rect key="frame" x="0.0" y="0.0" width="248" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSF-sp-Pcw">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kmz-U5-ueD">
-                                        <rect key="frame" x="0.0" y="20.5" width="248" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="14.5" width="248" height="18"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ati-wv-TXH">
-                                                <rect key="frame" x="0.0" y="0.0" width="248" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of flashcards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ati-wv-TXH">
+                                                <rect key="frame" x="0.0" y="0.0" width="248" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -75,6 +75,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lastVisitedLabel" destination="nSF-sp-Pcw" id="Rei-xW-pAk"/>
+                <outlet property="mainStack" destination="zIj-o8-aF2" id="I8p-jH-q10"/>
                 <outlet property="numberOfCardsLabel" destination="ati-wv-TXH" id="gtn-rr-XQp"/>
                 <outlet property="titleLabel" destination="XEB-xq-Yl8" id="Ug7-Ys-nZY"/>
             </connections>

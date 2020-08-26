@@ -15,10 +15,14 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     var categories : Results<Category>?
     override func viewDidLoad() {
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
-        //self.tableView.rowHeight = 80.0
+        self.tableView.rowHeight = 150.0
         super.viewDidLoad()
         searchBar.delegate = self
         loadCategories()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     //MARK: - Add Category
@@ -85,6 +89,7 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryTableViewCell
+        
         let category = categories![indexPath.row]
         cell.category = category
         return cell
@@ -94,7 +99,15 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     //MARK: - Did select row
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        categories![indexPath.row].lastVisited = Date()
+        
+        do {
+            try realm.write {
+                categories![indexPath.row].lastVisited = Date()
+            }
+        } catch {
+            print(error)
+        }
+        
         performSegue(withIdentifier: "goToFlashcards", sender: self)
     }
     
@@ -110,8 +123,5 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
-    func saveCategories(){
-    }
-
-    
 }
+

@@ -11,9 +11,11 @@ import RealmSwift
 
 class CategoryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var mainStack: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var lastVisitedLabel: UILabel!
     @IBOutlet weak var numberOfCardsLabel: UILabel!
+    
     
     var category: Category? {
         didSet {
@@ -24,20 +26,24 @@ class CategoryTableViewCell: UITableViewCell {
             titleLabel.text = category?.name
             lastVisitedLabel.text = "Last checked : \(formatter.string(from: lastVisitDate!))"
             numberOfCardsLabel.text = "Flashcards : \(category?.flashcards.count ?? 0)"
+            
+            
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
     @IBAction func deleteCategoryButtonPressed(_ sender: UIButton) {
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
+
+

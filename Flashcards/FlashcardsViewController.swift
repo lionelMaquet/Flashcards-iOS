@@ -11,6 +11,7 @@ import RealmSwift
 
 class FlashcardsViewController: UIViewController {
     
+    @IBOutlet weak var textSign: UILabel!
     let realm = try! Realm()
     
     //MARK: - IBOutlets
@@ -156,9 +157,11 @@ class FlashcardsViewController: UIViewController {
         if (shouldDisplayQuestion){
             qoraLabel.text = "Question"
             flashcardLabel.text = self.currentQuestion
+            textSign.textColor = UIColor.red
         } else {
             qoraLabel.text = "Answer"
             flashcardLabel.text = self.currentAnswer
+            textSign.textColor = UIColor.green
         }
         positionLabel.text = self.textForPositionLabel
     }

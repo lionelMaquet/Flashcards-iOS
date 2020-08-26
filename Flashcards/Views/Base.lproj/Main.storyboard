@@ -6,6 +6,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BalooTamma2-Medium.ttf">
+            <string>BalooTamma2-Medium</string>
+        </array>
+        <array key="BalooTamma2-Regular.ttf">
+            <string>BalooTamma2-Regular</string>
+        </array>
+        <array key="BalooTamma2-SemiBold.ttf">
+            <string>BalooTamma2-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--All decks-->
         <scene sceneID="mfb-xK-iPq">
@@ -61,25 +72,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-Fq-OHE">
-                                <rect key="frame" x="103.5" y="190" width="207.5" height="64.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="148" y="150" width="118" height="52"/>
+                                <fontDescription key="fontDescription" name="BalooTamma2-Regular" family="Baloo Tamma 2" pointSize="30"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the ...." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-7M-4Hc">
-                                <rect key="frame" x="60" y="432.5" width="334" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <rect key="frame" x="60" y="428" width="334" height="40"/>
+                                <fontDescription key="fontDescription" name="BalooTamma2-SemiBold" family="Baloo Tamma 2" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Dd-fJQ">
-                                <rect key="frame" x="327" y="749.5" width="57" height="33.5"/>
-                                <fontDescription key="fontDescription" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="31"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="339" y="738" width="45" height="45"/>
+                                <fontDescription key="fontDescription" name="BalooTamma2-Medium" family="Baloo Tamma 2" pointSize="26"/>
+                                <color key="textColor" red="0.63331687449999996" green="0.13727548719999999" blue="0.1218189672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-4N-rgf">
-                                <rect key="frame" x="20" y="405" width="21" height="100"/>
+                                <rect key="frame" x="20" y="402" width="21" height="100"/>
                                 <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="69"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,13 +101,13 @@
                             <constraint firstItem="o2n-Fq-OHE" firstAttribute="centerX" secondItem="tua-d8-plW" secondAttribute="centerX" id="3yG-9c-Pdm"/>
                             <constraint firstItem="V6U-7M-4Hc" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" id="FRm-v5-ExV"/>
                             <constraint firstItem="V6U-7M-4Hc" firstAttribute="leading" secondItem="O8b-88-Hfp" secondAttribute="leading" constant="60" id="GB6-j4-SFy"/>
-                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="top" secondItem="O8b-88-Hfp" secondAttribute="top" constant="50" id="ISM-Nb-zYS"/>
                             <constraint firstItem="O8b-88-Hfp" firstAttribute="trailing" secondItem="dOH-Dd-fJQ" secondAttribute="trailing" constant="30" id="O4o-2e-1eJ"/>
                             <constraint firstItem="O8b-88-Hfp" firstAttribute="trailing" secondItem="V6U-7M-4Hc" secondAttribute="trailing" constant="20" id="Stc-WA-iKC"/>
                             <constraint firstItem="azv-4N-rgf" firstAttribute="leading" secondItem="O8b-88-Hfp" secondAttribute="leading" constant="20" id="WpG-cW-ZOR"/>
-                            <constraint firstItem="azv-4N-rgf" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" constant="7" id="dut-n3-Led"/>
+                            <constraint firstItem="azv-4N-rgf" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" constant="4" id="dut-n3-Led"/>
                             <constraint firstItem="V6U-7M-4Hc" firstAttribute="centerX" secondItem="tua-d8-plW" secondAttribute="centerX" id="ozl-Xd-kve"/>
                             <constraint firstItem="O8b-88-Hfp" firstAttribute="bottom" secondItem="dOH-Dd-fJQ" secondAttribute="bottom" constant="30" id="rhT-Mc-naA"/>
+                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="top" secondItem="O8b-88-Hfp" secondAttribute="top" constant="10" id="trR-t7-HVo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8b-88-Hfp"/>
                     </view>
@@ -111,6 +122,7 @@
                         <outlet property="flashcardLabel" destination="V6U-7M-4Hc" id="1Uj-Ls-Iop"/>
                         <outlet property="positionLabel" destination="dOH-Dd-fJQ" id="wOE-9o-N0u"/>
                         <outlet property="qoraLabel" destination="o2n-Fq-OHE" id="Gid-DR-iPo"/>
+                        <outlet property="textSign" destination="azv-4N-rgf" id="Hz7-UU-rVT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IX-Py-dpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,7 +15,7 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     var categories : Results<Category>?
     override func viewDidLoad() {
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
-        self.tableView.rowHeight = 150.0
+        self.tableView.rowHeight = 200.0
         super.viewDidLoad()
         searchBar.delegate = self
         loadCategories()
@@ -89,7 +89,7 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryTableViewCell
-        
+        cell.delegate = self
         let category = categories![indexPath.row]
         cell.category = category
         return cell
@@ -125,3 +125,8 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     
 }
 
+extension CategoryTableViewController: CategoryCellDelegate {
+    func categoryWasDeleted() {
+        self.tableView.reloadData()
+    }
+}

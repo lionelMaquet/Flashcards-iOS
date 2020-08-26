@@ -10,6 +10,8 @@
 		A385096592A9B49F2629462E /* Pods_Flashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8514568F40618700AF26828 /* Pods_Flashcards.framework */; };
 		E2B6B9AC24F692F800DE0A1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9AB24F692F800DE0A1E /* Category.swift */; };
 		E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B124F693B900DE0A1E /* Flashcard.swift */; };
+		E2B6B9B724F69F0C00DE0A1E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */; };
+		E2B6B9B824F69F0C00DE0A1E /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B6B9B624F69F0C00DE0A1E /* CategoryTableViewCell.xib */; };
 		E2DBCA9824F1470B0036C38D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9724F1470B0036C38D /* AppDelegate.swift */; };
 		E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */; };
 		E2DBCA9F24F1470B0036C38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DBCA9D24F1470B0036C38D /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		D4F2D6426B6161B13E0CE1C1 /* Pods-Flashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcards.debug.xcconfig"; path = "Target Support Files/Pods-Flashcards/Pods-Flashcards.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B6B9AB24F692F800DE0A1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E2B6B9B124F693B900DE0A1E /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		E2B6B9B624F69F0C00DE0A1E /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		E2DBCA9424F1470B0036C38D /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DBCA9724F1470B0036C38D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				E2DBCAA524F1470D0036C38D /* LaunchScreen.storyboard */,
 				E2DBCA9D24F1470B0036C38D /* Main.storyboard */,
+				E2B6B9B624F69F0C00DE0A1E /* CategoryTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 		E2DBCAB024F147F10036C38D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */,
 				E2DBCAB124F14F670036C38D /* FlashcardsViewController.swift */,
 				E2DBCAAE24F147EE0036C38D /* CategoryTableViewController.swift */,
 			);
@@ -187,6 +193,7 @@
 				E2DBCAA724F1470D0036C38D /* LaunchScreen.storyboard in Resources */,
 				E2DBCAA424F1470D0036C38D /* Assets.xcassets in Resources */,
 				E2DBCA9F24F1470B0036C38D /* Main.storyboard in Resources */,
+				E2B6B9B824F69F0C00DE0A1E /* CategoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +250,7 @@
 				E2DBCAAF24F147EE0036C38D /* CategoryTableViewController.swift in Sources */,
 				E2DBCAB224F14F670036C38D /* FlashcardsViewController.swift in Sources */,
 				E2DBCA9A24F1470B0036C38D /* SceneDelegate.swift in Sources */,
+				E2B6B9B724F69F0C00DE0A1E /* CategoryTableViewCell.swift in Sources */,
 				E2B6B9AC24F692F800DE0A1E /* Category.swift in Sources */,
 				E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */,
 			);

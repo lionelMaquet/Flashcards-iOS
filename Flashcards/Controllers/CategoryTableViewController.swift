@@ -14,7 +14,8 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     let realm = try! Realm()
     var categories : Results<Category>?
     override func viewDidLoad() {
-        
+        tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "categoryCell")
+        //self.tableView.rowHeight = 80.0
         super.viewDidLoad()
         searchBar.delegate = self
         loadCategories()
@@ -32,6 +33,7 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
             if !textfield.text!.isEmpty {
                 let newCategory = Category()
                 newCategory.name = textfield.text!
+                newCategory.lastVisited = Date()
                 
                 do {
                     try self.realm.write {
@@ -82,16 +84,17 @@ class CategoryTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryTableViewCell
         let category = categories![indexPath.row]
-        cell?.textLabel!.text = category.name
-        return cell!
+        cell.category = category
+        return cell
     }
     
     
     //MARK: - Did select row
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        categories![indexPath.row].lastVisited = Date()
         performSegue(withIdentifier: "goToFlashcards", sender: self)
     }
     

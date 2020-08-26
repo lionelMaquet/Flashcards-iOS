@@ -11,6 +11,7 @@ import RealmSwift
 
 class Category: Object {
     @objc dynamic var name: String = ""
+    @objc dynamic var lastVisited: Date?
     // forward category
     let flashcards = List<Flashcard>() // container type specific to Realm
 }

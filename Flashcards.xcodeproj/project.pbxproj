@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A385096592A9B49F2629462E /* Pods_Flashcards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8514568F40618700AF26828 /* Pods_Flashcards.framework */; };
-		E285375824F7D71F00EC87FF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E285375724F7D71F00EC87FF /* README.md */; };
 		E2B6B9AC24F692F800DE0A1E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9AB24F692F800DE0A1E /* Category.swift */; };
 		E2B6B9B224F693B900DE0A1E /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B124F693B900DE0A1E /* Flashcard.swift */; };
 		E2B6B9B724F69F0C00DE0A1E /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */; };
@@ -31,7 +30,6 @@
 		203645B93C47B83A5D4F4FC0 /* Pods-Flashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcards.release.xcconfig"; path = "Target Support Files/Pods-Flashcards/Pods-Flashcards.release.xcconfig"; sourceTree = "<group>"; };
 		B8514568F40618700AF26828 /* Pods_Flashcards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flashcards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F2D6426B6161B13E0CE1C1 /* Pods-Flashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashcards.debug.xcconfig"; path = "Target Support Files/Pods-Flashcards/Pods-Flashcards.debug.xcconfig"; sourceTree = "<group>"; };
-		E285375724F7D71F00EC87FF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		E2B6B9AB24F692F800DE0A1E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E2B6B9B124F693B900DE0A1E /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
 		E2B6B9B524F69F0C00DE0A1E /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		E2DBCA9624F1470B0036C38D /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				E285375724F7D71F00EC87FF /* README.md */,
 				E2DBCA9724F1470B0036C38D /* AppDelegate.swift */,
 				E2DBCA9924F1470B0036C38D /* SceneDelegate.swift */,
 				E2B6B9B424F6942900DE0A1E /* Views */,
@@ -218,7 +215,6 @@
 			files = (
 				E2DBCAA724F1470D0036C38D /* LaunchScreen.storyboard in Resources */,
 				E2DBCAA424F1470D0036C38D /* Assets.xcassets in Resources */,
-				E285375824F7D71F00EC87FF /* README.md in Resources */,
 				E2B6B9BF24F6C94700DE0A1E /* BalooTamma2-Bold.ttf in Resources */,
 				E2B6B9C024F6C94900DE0A1E /* BalooTamma2-ExtraBold.ttf in Resources */,
 				E2B6B9C124F6C94A00DE0A1E /* BalooTamma2-Medium.ttf in Resources */,

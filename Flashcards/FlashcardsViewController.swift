@@ -193,15 +193,25 @@ class FlashcardsViewController: UIViewController {
     
     
     func updateFlashcardUI(){
-        if (shouldDisplayQuestion){
-            qoraLabel.text = "Question"
-            flashcardLabel.text = self.currentQuestion
-            textSign.textColor = UIColor.red
+        
+        if (flashcards?.count ?? 0 > 0) {
+            if (shouldDisplayQuestion){
+                qoraLabel.text = "Q"
+                flashcardLabel.text = self.currentQuestion
+                textSign.textColor = UIColor.red
+                textSign.isHidden = false
+            } else {
+                qoraLabel.text = "A"
+                flashcardLabel.text = self.currentAnswer
+                textSign.textColor = UIColor.green
+                textSign.isHidden = false
+            }
         } else {
-            qoraLabel.text = "Answer"
-            flashcardLabel.text = self.currentAnswer
-            textSign.textColor = UIColor.green
+            qoraLabel.text = ""
+            textSign.isHidden = true
         }
+        
+        
         positionLabel.text = self.textForPositionLabel
     }
     

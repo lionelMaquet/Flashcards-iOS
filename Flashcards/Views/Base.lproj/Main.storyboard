@@ -7,11 +7,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="BalooTamma2-ExtraBold.ttf">
+            <string>BalooTamma2-ExtraBold</string>
+        </array>
         <array key="BalooTamma2-Medium.ttf">
             <string>BalooTamma2-Medium</string>
-        </array>
-        <array key="BalooTamma2-Regular.ttf">
-            <string>BalooTamma2-Regular</string>
         </array>
         <array key="BalooTamma2-SemiBold.ttf">
             <string>BalooTamma2-SemiBold</string>
@@ -71,16 +71,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-Fq-OHE">
-                                <rect key="frame" x="148" y="150" width="118" height="52"/>
-                                <fontDescription key="fontDescription" name="BalooTamma2-Regular" family="Baloo Tamma 2" pointSize="30"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the ...." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-7M-4Hc">
-                                <rect key="frame" x="60" y="428" width="334" height="40"/>
-                                <fontDescription key="fontDescription" name="BalooTamma2-SemiBold" family="Baloo Tamma 2" pointSize="23"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2n-Fq-OHE">
+                                <rect key="frame" x="10" y="429" width="23" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="QQA-U6-8af"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BalooTamma2-ExtraBold" family="Baloo Tamma 2" pointSize="23"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Dd-fJQ">
@@ -90,24 +87,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azv-4N-rgf">
-                                <rect key="frame" x="20" y="402" width="21" height="100"/>
+                                <rect key="frame" x="37" y="402" width="21" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="yX3-Cw-ioI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="69"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is currently no flashcard in this deck !" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6U-7M-4Hc">
+                                <rect key="frame" x="88" y="408.5" width="306" height="79.5"/>
+                                <fontDescription key="fontDescription" name="BalooTamma2-SemiBold" family="Baloo Tamma 2" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="centerX" secondItem="tua-d8-plW" secondAttribute="centerX" id="3yG-9c-Pdm"/>
+                            <constraint firstItem="V6U-7M-4Hc" firstAttribute="leading" secondItem="azv-4N-rgf" secondAttribute="trailing" constant="30" id="9o7-XT-yrR"/>
+                            <constraint firstItem="V6U-7M-4Hc" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" id="ALm-zU-l7n"/>
+                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="leading" secondItem="O8b-88-Hfp" secondAttribute="leading" constant="10" id="AwU-SC-3td"/>
                             <constraint firstItem="V6U-7M-4Hc" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" id="FRm-v5-ExV"/>
-                            <constraint firstItem="V6U-7M-4Hc" firstAttribute="leading" secondItem="O8b-88-Hfp" secondAttribute="leading" constant="60" id="GB6-j4-SFy"/>
+                            <constraint firstItem="azv-4N-rgf" firstAttribute="leading" secondItem="o2n-Fq-OHE" secondAttribute="trailing" constant="4" id="H0j-mm-cXq"/>
                             <constraint firstItem="O8b-88-Hfp" firstAttribute="trailing" secondItem="dOH-Dd-fJQ" secondAttribute="trailing" constant="30" id="O4o-2e-1eJ"/>
-                            <constraint firstItem="O8b-88-Hfp" firstAttribute="trailing" secondItem="V6U-7M-4Hc" secondAttribute="trailing" constant="20" id="Stc-WA-iKC"/>
-                            <constraint firstItem="azv-4N-rgf" firstAttribute="leading" secondItem="O8b-88-Hfp" secondAttribute="leading" constant="20" id="WpG-cW-ZOR"/>
                             <constraint firstItem="azv-4N-rgf" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" constant="4" id="dut-n3-Led"/>
-                            <constraint firstItem="V6U-7M-4Hc" firstAttribute="centerX" secondItem="tua-d8-plW" secondAttribute="centerX" id="ozl-Xd-kve"/>
+                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="centerY" secondItem="tua-d8-plW" secondAttribute="centerY" constant="1" id="mqI-sF-UaF"/>
                             <constraint firstItem="O8b-88-Hfp" firstAttribute="bottom" secondItem="dOH-Dd-fJQ" secondAttribute="bottom" constant="30" id="rhT-Mc-naA"/>
-                            <constraint firstItem="o2n-Fq-OHE" firstAttribute="top" secondItem="O8b-88-Hfp" secondAttribute="top" constant="10" id="trR-t7-HVo"/>
+                            <constraint firstItem="O8b-88-Hfp" firstAttribute="trailing" secondItem="V6U-7M-4Hc" secondAttribute="trailing" constant="20" id="xEd-35-p55"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O8b-88-Hfp"/>
                     </view>
@@ -134,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IX-Py-dpE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="181"/>
+            <point key="canvasLocation" x="1402.8985507246377" y="180.80357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9lA-gA-v0f">

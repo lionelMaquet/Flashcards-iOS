@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//test
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

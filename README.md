@@ -1,5 +1,8 @@
 # Flashcards-iOS
 
+
+This Application uses Realm for persisting Data and UIKit for the interface. 
+
 * Create different decks for different subjets
 
 ![capture1](https://user-images.githubusercontent.com/21205536/91347069-08885900-e7e2-11ea-9f2c-dbfaab3ab968.png)
